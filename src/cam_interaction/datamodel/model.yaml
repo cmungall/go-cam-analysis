@@ -1,0 +1,83 @@
+name: cam_interaction
+description: GO CAM interaction model
+id: https://w3id.org/gocam_ixn
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  gocam_ixn: https://w3id.org/gocam_ixn
+default_prefix: gocam_ixn
+types:
+  IdentifierType:
+    typeof: string
+  GOIdentifierType:
+    typeof: string
+  ROIdentifierType:
+    typeof: string
+  ModelIdentifierType:
+    typeof: string
+slots:
+  subject:
+    examples:
+    - value: REACTO:R-HSA-202527
+    range: IdentifierType
+  subject_activity:
+    examples:
+    - value: GO:0004674
+    range: GOIdentifierType
+  subject_location:
+    examples:
+    - value: GO:0005829
+    range: IdentifierType
+  subject_process:
+    examples:
+    - value: GO:0008150
+    range: GOIdentifierType
+  relation:
+    examples:
+    - value: RO:0002411
+    range: ROIdentifierType
+  object:
+    examples:
+    - value: REACTO:R-HSA-2685681
+    range: IdentifierType
+  object_activity:
+    examples:
+    - value: GO:0004842
+    range: GOIdentifierType
+  object_location:
+    examples:
+    - value: GO:0005829
+    range: IdentifierType
+  object_process:
+    examples:
+    - value: GO:0008150
+    range: GOIdentifierType
+  model:
+    examples:
+    - value: gomodel:R-HSA-202424
+    range: ModelIdentifierType
+  state:
+    examples:
+    - value: development
+    range: string
+classes:
+  InteractionCollection:
+    attributes:
+      interactions:
+        range: Interaction
+        multivalued: true
+  Interaction:
+    slots:
+    - subject
+    - subject_activity
+    - subject_location
+    - subject_process
+    - relation
+    - object
+    - object_activity
+    - object_location
+    - object_process
+    - model
+    - state
+
